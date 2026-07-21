@@ -12,7 +12,7 @@ with a hash-verifiable provenance trail for every generated asset.
 ## Submission links
 
 - Working app: **pending public deployment**
-- Source repository: **pending public repository**
+- Source repository: **https://github.com/yaredtekile/proofrelay**
 - Demo video: **pending final live pipeline recording**
 - Genblaze feedback issue: **https://github.com/backblaze-labs/genblaze/issues/172**
 
@@ -207,7 +207,7 @@ Make the update. Keep the proof."
 - [ ] Live OpenAI image generation run
 - [ ] Verify final assets and manifest in B2
 - [ ] Public deployment
-- [ ] Public source repository
+- [x] Public source repository
 - [x] Genblaze feedback issue
 - [ ] Public demo video under three minutes
 - [ ] Devpost registration and submission
