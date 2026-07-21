@@ -111,3 +111,4 @@ generation and storage, while the open provenance format reduces vendor lock-in.
 - Prize pool: $10,000 cash
 - Eligibility: international adults, subject to the official exclusions
 - Current milestone: provenance-first media bundle generator
+- Genblaze integration feedback: [backblaze-labs/genblaze#172](https://github.com/backblaze-labs/genblaze/issues/172)

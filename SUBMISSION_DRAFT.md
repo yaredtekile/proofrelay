@@ -14,7 +14,7 @@ with a hash-verifiable provenance trail for every generated asset.
 - Working app: **pending public deployment**
 - Source repository: **pending public repository**
 - Demo video: **pending final live pipeline recording**
-- Genblaze feedback issue: **pending after live integration review**
+- Genblaze feedback issue: **https://github.com/backblaze-labs/genblaze/issues/172**
 
 ## Inspiration
 
@@ -208,7 +208,6 @@ Make the update. Keep the proof."
 - [ ] Verify final assets and manifest in B2
 - [ ] Public deployment
 - [ ] Public source repository
-- [ ] Genblaze feedback issue
+- [x] Genblaze feedback issue
 - [ ] Public demo video under three minutes
 - [ ] Devpost registration and submission
-
