@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proofrelay"
+version = "0.1.0"
+description = "Provenance-first multilingual media briefs for field teams"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "genblaze-core==0.3.4",
+  "genblaze-openai==0.3.2",
+  "genblaze-s3==0.3.4",
+  "pydantic>=2.9,<3",
+  "uvicorn>=0.30,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.27,<1",
+  "pytest>=8.3,<9",
+]
+
+[project.scripts]
+proofrelay = "proofrelay.cli:main"
+proofrelay-web = "proofrelay.webapp:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+proofrelay = ["web/*.html", "web/*.css", "web/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

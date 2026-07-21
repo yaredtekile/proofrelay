@@ -1,0 +1,12 @@
+{
+  "incident_id": "FR-2026-071",
+  "title": "Water access point requires repair",
+  "summary": "A field team confirmed that the main hand pump is not producing water. The surrounding area is dry and residents are using a secondary source while the maintenance team verifies the cause.",
+  "location": "Bole sub-city, Addis Ababa",
+  "severity": "high",
+  "language": "English + Amharic",
+  "audience": "Maintenance and community teams",
+  "approved_by": "Yared Tekileselassie",
+  "approved_at": "2026-07-21T09:30:00+03:00"
+}
+

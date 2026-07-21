@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="ProofRelay turns approved field evidence into provenance-verified media briefs." />
+    <title>ProofRelay — Provenance desk</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="paper-grain" aria-hidden="true"></div>
+    <header class="masthead">
+      <a class="wordmark" href="/" aria-label="ProofRelay home">
+        <span class="wordmark-mark">P/R</span>
+        <span>ProofRelay</span>
+      </a>
+      <div class="edition">
+        <span>PROVENANCE DESK</span>
+        <span>ADDIS ABABA · 2026</span>
+      </div>
+      <div class="system-status"><i></i> Local proof engine online</div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="kicker">Verified evidence in / publishable media out</p>
+        <h1 id="page-title">Make the update.<br /><em>Keep the proof.</em></h1>
+        <p class="dek">
+          Turn a human-approved field report into a media brief with a tamper-evident
+          Genblaze manifest. Nothing publishes until a person signs off.
+        </p>
+        <div class="issue-number" aria-hidden="true"><b>01</b><span>PROTOTYPE<br />ISSUE</span></div>
+      </section>
+
+      <section class="workspace" aria-label="Briefing workspace">
+        <form id="brief-form" class="intake-panel">
+          <div class="panel-heading">
+            <span class="step-number">01</span>
+            <div>
+              <p class="overline">Source desk</p>
+              <h2>Approved field report</h2>
+            </div>
+          </div>
+
+          <label class="field wide">
+            <span>Incident title</span>
+            <input name="title" required maxlength="120" value="Water access point requires repair" />
+          </label>
+
+          <label class="field wide">
+            <span>Verified summary</span>
+            <textarea name="summary" required maxlength="800" rows="5">A field team confirmed that the main hand pump is not producing water. The surrounding area is dry and residents are using a secondary source while the maintenance team verifies the cause.</textarea>
+            <small>Only include facts that survived human review.</small>
+          </label>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Location</span>
+              <input name="location" required value="Bole sub-city, Addis Ababa" />
+            </label>
+            <label class="field">
+              <span>Severity</span>
+              <select name="severity">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high" selected>High</option>
+                <option value="critical">Critical</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Audience</span>
+              <input name="audience" required value="Maintenance and community teams" />
+            </label>
+            <label class="field">
+              <span>Language</span>
+              <select name="language">
+                <option>English</option>
+                <option>Amharic</option>
+                <option selected>English + Amharic</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field wide approval-field">
+            <span>Source approved by</span>
+            <input name="approved_by" required value="Yared Tekileselassie" />
+            <i>✓</i>
+          </label>
+
+          <button class="generate-button" type="submit">
+            <span>Generate proof bundle</span>
+            <b aria-hidden="true">↗</b>
+          </button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <article class="proof-panel" aria-labelledby="proof-heading">
+          <div class="panel-heading proof-heading">
+            <span class="step-number">02</span>
+            <div>
+              <p class="overline">Output desk</p>
+              <h2 id="proof-heading">Media proof</h2>
+            </div>
+            <span id="proof-badge" class="proof-badge">WAITING</span>
+          </div>
+
+          <div id="empty-state" class="empty-state">
+            <div class="registration-marks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <span class="empty-glyph">↳</span>
+            <h3>No generated asset yet</h3>
+            <p>Your approved report stays on the left. The generated media and its proof trail appear here.</p>
+          </div>
+
+          <div id="result-state" class="result-state" hidden>
+            <div class="asset-frame">
+              <img id="asset-preview" alt="Generated field briefing card" />
+              <span class="asset-stamp">AI-ASSISTED / HUMAN-REVIEWED</span>
+            </div>
+
+            <dl class="proof-metadata">
+              <div><dt>Asset hash</dt><dd id="asset-hash">—</dd></div>
+              <div><dt>Manifest hash</dt><dd id="manifest-hash">—</dd></div>
+              <div><dt>Genblaze verify()</dt><dd id="verify-state">—</dd></div>
+              <div><dt>Publication</dt><dd id="publication-state">Awaiting approval</dd></div>
+            </dl>
+
+            <div class="proof-actions">
+              <a id="download-link" class="quiet-button" download="proofrelay-brief.svg">Download asset</a>
+              <a id="manifest-link" class="quiet-button" target="_blank" rel="noreferrer">Inspect manifest</a>
+              <button id="approve-button" class="approve-button" type="button">Approve for publication <b>✓</b></button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="audit-rail" aria-labelledby="audit-title">
+        <div class="audit-title-wrap">
+          <p class="overline">Chain of custody</p>
+          <h2 id="audit-title">The audit rail</h2>
+        </div>
+        <ol>
+          <li class="complete"><span>01</span><div><b>Evidence reviewed</b><small>Human source approval</small></div></li>
+          <li id="rail-generated"><span>02</span><div><b>Media generated</b><small>Genblaze pipeline</small></div></li>
+          <li id="rail-verified"><span>03</span><div><b>Provenance verified</b><small>SHA-256 manifest</small></div></li>
+          <li id="rail-approved"><span>04</span><div><b>Publication approved</b><small>Second human gate</small></div></li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <span>ProofRelay prototype · Built for real-world field communications</span>
+      <span>Genblaze × Backblaze B2</span>
+    </footer>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
