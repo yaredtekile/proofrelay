@@ -1,5 +1,7 @@
 # ProofRelay
 
+[![Test ProofRelay](https://github.com/yaredtekile/proofrelay/actions/workflows/test.yml/badge.svg)](https://github.com/yaredtekile/proofrelay/actions/workflows/test.yml)
+
 **Verified evidence in. Publishable media out.**
 
 ProofRelay turns an approved field report into a multilingual media brief while
